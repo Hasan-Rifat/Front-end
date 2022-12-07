@@ -3,11 +3,11 @@ import logo from "../../images/logo.png";
 
 const AttendanceInformation = () => {
   useEffect(() => {
-    fetch(`https://doctors-portal-server-1.herokuapp.com/user/${email}`, {
-      method: "PUT",
+    fetch(`https://test.nexisltd.com/test `, {
+      method: "GET",
       headers: {
         content: "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAMLheAAAAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F}`,
       },
     })
       .then((res) => res.json())
@@ -18,7 +18,33 @@ const AttendanceInformation = () => {
       });
   }, []);
 
-  const data = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }];
+  const dataTitle = [{ id: 1, a: "Date", b: "Employee Name", c: "Status" }];
+
+  const data = [
+    { id: 1, data: "11/7/16", employeeName: "Arkebe McCoy", status: "Present" },
+    { id: 2, data: "2/11/12", employeeName: "Eleanor Pena", status: "Absent" },
+    { id: 3, data: "4/21/12", employeeName: "Wade Warren", status: "Present" },
+    { id: 4, data: "8/15/17", employeeName: "Jacob Jones", status: "Absent" },
+    {
+      id: 5,
+      data: "6/19/14",
+      employeeName: "Darlene Robertson",
+      status: "Present",
+    },
+    { id: 6, data: "6/21/19", employeeName: "Floyd Miles", status: "Absent" },
+    {
+      id: 7,
+      data: "5/19/12",
+      employeeName: "Ralph Edwards",
+      status: "Present",
+    },
+    {
+      id: 8,
+      data: "5/7/16",
+      employeeName: "Leslie Alexander",
+      status: "Absent",
+    },
+  ];
   return (
     <div className="max-w-[1170px] mx-auto py-[50px]">
       <div>
@@ -34,7 +60,27 @@ const AttendanceInformation = () => {
         </h2>
       </div>
       {/* table */}
-      <div></div>
+      <div className="mt-[70px]">
+        {/* table head  */}
+        {dataTitle.map(({ a, b, c }) => (
+          <div className="flex justify-between">
+            <h2 className="text-neutral text-xl font-semibold">{a}</h2>
+            <h2 className="text-neutral text-xl font-semibold">{b}</h2>
+            <h2 className="text-neutral text-xl font-semibold">{c}</h2>
+          </div>
+        ))}
+      </div>
+      {/* table body */}
+      <div className="mt-[20px]">
+        {/* table head  */}
+        {data.map(({ id, data, employeeName, status }) => (
+          <div key={id} className="flex justify-between mt-11">
+            <p className="text-neutral text-xl ">{data}</p>
+            <p className="text-neutral text-xl ">{employeeName}</p>
+            <p className="text-neutral text-xl ">{status}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
