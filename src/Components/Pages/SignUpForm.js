@@ -91,9 +91,9 @@ const SignUpForm = () => {
 
   return (
     <section className="text-neutral body-font relative bg-[#f7f7f7f7] h-screen">
-      <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+      <div className="container px-5 py-24 mx-auto grid grid-cols-5">
         {/* left */}
-        <div className="lg:w-3/5 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 p-10 ">
+        <div className=" rounded-lg overflow-hidden sm:mr-10 p-10  xl:col-span-5 2xl:col-span-3">
           <div className="">
             <img className="" src={img} alt="" />
           </div>
@@ -102,7 +102,7 @@ const SignUpForm = () => {
           </div>
         </div>
         {/* right */}
-        <div className="rounded-2xl p-20 shadow-2xl lg:w-2/5 md:w-1/2 bg-white flex flex-col ">
+        <div className="2xl:col-span-2 xl:col-span-5 rounded-2xl  lg:p-10 2xl:p-20 shadow-2xl  bg-white flex flex-col ">
           <h2 className="text-neutral text-center text-[32px] leading-[58px] mb-1 font-bold title-font pb-[23px]">
             SignUp From
           </h2>
